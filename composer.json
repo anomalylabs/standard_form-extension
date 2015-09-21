@@ -1,0 +1,9 @@
+{
+    "name": "anomaly/standard_form-extension",
+    "type": "streams-addon",
+    "autoload": {
+        "psr-4": {
+            "Anomaly\\StandardFormExtension\\": "src/"
+        }
+    }
+}
