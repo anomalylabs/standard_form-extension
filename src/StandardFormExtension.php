@@ -2,20 +2,23 @@
 
 use Anomaly\Streams\Platform\Addon\Extension\Extension;
 
+/**
+ * Class StandardFormExtension
+ *
+ * @link          http://anomaly.is/streams-platform
+ * @author        AnomalyLabs, Inc. <hello@anomaly.is>
+ * @author        Ryan Thompson <ryan@anomaly.is>
+ * @package       Anomaly\StandardFormExtension
+ */
 class StandardFormExtension extends Extension
 {
 
     /**
-     * This extension provides...
+     * This extension provides the standard
+     * form handler for the Forms module.
      *
-     * This should contain the dot namespace
-     * of the addon this extension is for followed
-     * by the purpose.variation of the extension.
-     *
-     * For example anomaly.module.store::gateway.stripe
-     *
-     * @var null|string
+     * @var string
      */
-    protected $provides = null;
+    protected $provides = 'anomaly.module.forms::form_handler.standard';
 
 }
