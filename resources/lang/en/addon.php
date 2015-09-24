@@ -1,7 +1,7 @@
 <?php
 
 return [
-    'title'       => 'Standard',
+    'title'       => 'Standard Form',
     'name'        => 'Standard Form Extension',
     'description' => ''
 ];

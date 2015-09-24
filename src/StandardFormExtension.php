@@ -1,6 +1,11 @@
 <?php namespace Anomaly\StandardFormExtension;
 
+use Anomaly\FormsModule\Form\Contract\FormInterface;
+use Anomaly\FormsModule\Form\Handler\Contract\FormHandlerExtensionInterface;
+use Anomaly\StandardFormExtension\Handler\Command\GetStandardFormBuilder;
 use Anomaly\Streams\Platform\Addon\Extension\Extension;
+use Anomaly\Streams\Platform\Ui\Form\FormBuilder;
+use Anomaly\Streams\Platform\Ui\Form\Multiple\MultipleFormBuilder;
 
 /**
  * Class StandardFormExtension
@@ -10,7 +15,7 @@ use Anomaly\Streams\Platform\Addon\Extension\Extension;
  * @author        Ryan Thompson <ryan@anomaly.is>
  * @package       Anomaly\StandardFormExtension
  */
-class StandardFormExtension extends Extension
+class StandardFormExtension extends Extension implements FormHandlerExtensionInterface
 {
 
     /**
@@ -21,4 +26,25 @@ class StandardFormExtension extends Extension
      */
     protected $provides = 'anomaly.module.forms::form_handler.standard';
 
+    /**
+     * Return the form's builder instance.
+     *
+     * @param FormInterface $form
+     * @return FormBuilder
+     */
+    public function builder(FormInterface $form)
+    {
+        return $this->dispatch(new GetStandardFormBuilder($form));
+    }
+
+    /**
+     * Integrate the form handler's services
+     * with the primary form's builder instance.
+     *
+     * @param MultipleFormBuilder $builder
+     */
+    public function integrate(MultipleFormBuilder $builder)
+    {
+        // TODO: Implement integrate() method.
+    }
 }
