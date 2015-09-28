@@ -43,7 +43,9 @@ class GetStandardFormBuilder implements SelfHandling
      */
     public function handle(StandardFormBuilder $builder, Redirector $redirect)
     {
-        $stream = $this->form->getFormEntriesStream();
+        $actions = $this->form->getActions();
+        $buttons = $this->form->getButtons();
+        $stream  = $this->form->getFormEntriesStream();
 
         $builder->on(
             'saved',
@@ -55,6 +57,8 @@ class GetStandardFormBuilder implements SelfHandling
 
         return $builder
             ->setActions(['submit'])
+            ->setActions($actions->toArray())
+            ->setButtons($buttons->toArray())
             ->setModel($stream->getEntryModel())
             ->setOption('url', 'forms/handle/' . $this->form->getFormSlug())
             ->setOption('success_message', $this->form->getSuccessMessage() ?: false)
