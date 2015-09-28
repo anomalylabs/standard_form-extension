@@ -60,6 +60,7 @@ class GetStandardFormBuilder implements SelfHandling
             ->setActions($actions->toArray())
             ->setButtons($buttons->toArray())
             ->setModel($stream->getEntryModel())
+            ->setOption('enable_defaults', false)
             ->setOption('url', 'forms/handle/' . $this->form->getFormSlug())
             ->setOption('success_message', $this->form->getSuccessMessage() ?: false)
             ->setOption('redirect', $this->form->getSuccessRedirect() ?: $redirect->back());
