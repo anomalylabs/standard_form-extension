@@ -13,4 +13,13 @@ use Anomaly\Streams\Platform\Ui\Form\FormBuilder;
 class StandardFormBuilder extends FormBuilder
 {
 
+    /**
+     * The form options.
+     *
+     * @var array
+     */
+    protected $options = [
+        'breadcrumb' => false
+    ];
+
 }
