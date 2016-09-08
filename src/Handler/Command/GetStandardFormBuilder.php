@@ -4,7 +4,6 @@ use Anomaly\FormsModule\Form\Contract\FormInterface;
 use Anomaly\FormsModule\Form\FormAutoresponder;
 use Anomaly\FormsModule\Form\FormMailer;
 use Anomaly\StandardFormExtension\Handler\StandardFormBuilder;
-use Illuminate\Contracts\Bus\SelfHandling;
 use Illuminate\Routing\Redirector;
 
 /**
@@ -15,7 +14,7 @@ use Illuminate\Routing\Redirector;
  * @author        Ryan Thompson <ryan@anomaly.is>
  * @package       Anomaly\StandardFormExtension\Handler\Command
  */
-class GetStandardFormBuilder implements SelfHandling
+class GetStandardFormBuilder
 {
 
     /**

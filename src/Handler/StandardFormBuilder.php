@@ -19,7 +19,7 @@ class StandardFormBuilder extends FormBuilder
      * @var array
      */
     protected $options = [
-        'breadcrumb' => false
+        'breadcrumb' => false,
     ];
 
 }
