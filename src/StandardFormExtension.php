@@ -41,10 +41,10 @@ class StandardFormExtension extends Extension implements FormHandlerExtensionInt
      * Integrate the form handler's services
      * with the primary form's builder instance.
      *
-     * @param MultipleFormBuilder $builder
+     * @param FormBuilder $builder
      */
-    public function integrate(MultipleFormBuilder $builder)
+    public function integrate(FormBuilder $builder)
     {
-        // TODO: Implement integrate() method.
+        return $builder;
     }
 }
