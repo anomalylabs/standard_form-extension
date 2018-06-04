@@ -4,7 +4,6 @@ use Anomaly\FormsModule\Form\Contract\FormInterface;
 use Anomaly\FormsModule\Form\Handler\Contract\FormHandlerExtensionInterface;
 use Anomaly\StandardFormExtension\Handler\Command\GetStandardFormBuilder;
 use Anomaly\Streams\Platform\Addon\Extension\Extension;
-use Anomaly\Streams\Platform\Ui\Form\FormBuilder;
 use Anomaly\Streams\Platform\Ui\Form\Multiple\MultipleFormBuilder;
 
 /**
@@ -41,9 +40,9 @@ class StandardFormExtension extends Extension implements FormHandlerExtensionInt
      * Integrate the form handler's services
      * with the primary form's builder instance.
      *
-     * @param FormBuilder $builder
+     * @param MultipleFormBuilder $builder
      */
-    public function integrate(FormBuilder $builder)
+    public function integrate(MultipleFormBuilder $builder)
     {
         return $builder;
     }
